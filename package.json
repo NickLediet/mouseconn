@@ -1,0 +1,18 @@
+{
+  "name": "conmouse",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "preinstall": "sudo apt-get install bluetooth bluez libbluetooth-dev libudev-dev -y"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bluetoothctl": "^1.1.0",
+    "noble": "^1.9.1",
+    "node-bluetooth": "^1.2.5"
+  }
+}
