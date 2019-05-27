@@ -1,8 +1,10 @@
+#!/usr/bin/env node
+const args = require('./arguments')
 const util = require('util');
 const exec = util.promisify(require('child_process').exec);
 const bluetoothctl = require('bluetoothctl')
 
-const desiredDeviceName = 'MX Anywhere 2S'
+const desiredDeviceName = args.device
 
 async function main() {
     try{
