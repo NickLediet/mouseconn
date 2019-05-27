@@ -13,6 +13,8 @@
   "dependencies": {
     "bluetoothctl": "^1.1.0",
     "noble": "^1.9.1",
-    "node-bluetooth": "^1.2.5"
+    "node-bluetooth": "^1.2.5",
+    "yargs": "^13.2.4",
+    "debug": ">=2.6.9"
   }
 }
