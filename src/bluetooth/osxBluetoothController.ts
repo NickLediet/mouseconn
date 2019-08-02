@@ -1,11 +1,15 @@
 import { IBluetoothInterface } from "./bluetoothController.interface";
 import { asyncExec } from '../lib'
-import { PromiseWithChild } from "child_process";
 import Device from "./device.model";
 
 export default class OsxBluetoothController implements IBluetoothInterface {
   readonly COMMAND_LIST = 'blueutil --paired'
 
+  /**
+   * Format blueutil device string into a Device Object
+   * @param deviceString result string of device from blueutil call
+   * @return Device
+   */
   private deviceFormat(deviceString): Device {
     const deviceObject =
       deviceString.split(',') // Split the list
@@ -42,12 +46,23 @@ export default class OsxBluetoothController implements IBluetoothInterface {
     }
   }
 
+  /**
+   * @inheritdoc
+   */
   query() {
     throw new Error("Method not implemented.");
   }
+
+  /**
+   * @inheritdoc
+   */
   connect() {
     throw new Error("Method not implemented.");
   }
+
+  /**
+   * @inheritdoc
+   */
   purge() {
     throw new Error("Method not implemented.");
   }
