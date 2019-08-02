@@ -1,4 +1,7 @@
 import OsxBluetoothController from "./bluetooth/osxBluetoothController";
+import args from './arguments'
+
+console.log(args)
 
 async function init() {
   try {
