@@ -5,16 +5,25 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "preinstall": "sudo apt-get install bluetooth bluez libbluetooth-dev libudev-dev -y"
+    "preinstall": "node bin/preinstall.js",
+    "build": "tsc"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bluetoothctl": "^1.1.0",
+    "debug": ">=2.6.9",
+    "inversify": "^5.0.1",
     "noble": "^1.9.1",
+    "reflect-metadata": "^0.1.13",
+    "yargs": "^13.2.4"
+  },
+  "optionalDependencies": {
     "node-bluetooth": "^1.2.5",
-    "yargs": "^13.2.4",
-    "debug": ">=2.6.9"
+    "bluetoothctl": "^1.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^12.6.9",
+    "typescript": "^3.5.3"
   }
 }

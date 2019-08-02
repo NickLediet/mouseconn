@@ -1,4 +1,9 @@
 #!/usr/bin/env node
+/**
+ * @deprecated
+ */
+console.warn(`${__dirname}/index.js is deprecated and will be removed soon. \nPlease use use compiled ts script @ ${__dirname}/dist/index.js`)
+
 const args = require('./arguments')
 const util = require('util');
 const exec = util.promisify(require('child_process').exec);
@@ -13,7 +18,7 @@ async function main() {
         if(stderr) throw new Error(stderr)
 
         const [,...foundDevices] = stdout.split('\n') // Remove 'Added devices:' label
-        
+
         const devices = foundDevices
             .filter(d => !!d)
             .map(d => {
@@ -34,9 +39,9 @@ async function main() {
             }
             try {
                 const {stdout, stderr} = await exec(`bt-device -r ${d.address}`) // Remove all duplicates
-    
+
                 if(!!stderr) throw new Error(stderr)
-    
+
                 console.log(stdout)
             } catch(error) {
                 console.error(error)
@@ -56,7 +61,7 @@ async function main() {
                     if(!!stderr) throw new Error(stderr)
 
                     bluetoothctl.scan(false)
-                
+
                     process.exit()
 
                 } catch(error) {
@@ -64,7 +69,7 @@ async function main() {
                 }
             }
         })
-        
+
         bluetoothctl.scan(true)
     } catch(err) {
         console.error(err)
