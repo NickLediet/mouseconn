@@ -8,7 +8,10 @@ sudo -v
 ########################
 
 function osx-setup {
-  echo 'OSX Detected'
+  echo 'OSX Detected...'
+  echo 'Installing OSX Dependencies'
+
+  brew install blueutil
 }
 
 function linx-setup {
